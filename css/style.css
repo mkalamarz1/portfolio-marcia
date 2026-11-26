@@ -1,0 +1,340 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111111;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid #333333;
+    background-color: #111111;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #ffdf00;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #ffdf00;
+}
+
+/* =========================
+   APRESENTAÇÃO INICIAL
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 700px;
+}
+
+.subtitulo {
+    color: #ffdf00;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: #ffdf00;
+}
+
+.hero-text h2 {
+    font-size: 23px;
+    color: #dddddd;
+    margin-bottom: 20px;
+}
+
+.descricao {
+    color: #cccccc;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #ffdf00;
+    color: #111111;
+    padding: 14px 26px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   FOTO E FORMA AMARELA
+========================= */
+
+.hero-imagem {
+    flex: 1;
+    max-width: 420px;
+    height: 440px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forma-amarela {
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    background-color: #ffdf00;
+    border-radius: 100% 30% 40% 60%;
+    transform: rotate(-8deg);
+}
+
+.hero-imagem img {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 45% 45% 50% 15%;
+}
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao {
+    padding: 90px 8%;
+    border-top: 1px solid #292929;
+}
+
+.secao h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.secao > p:not(.subtitulo) {
+    max-width: 850px;
+    color: #cccccc;
+    font-size: 17px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background-color: #1b1b1b;
+    border: 1px solid #333333;
+    padding: 28px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #ffdf00;
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #ffdf00;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #cccccc;
+}
+
+.card a {
+    display: inline-block;
+    color: #ffdf00;
+    margin-top: 18px;
+}
+
+/* =========================
+   CONTATO
+========================= */
+
+.links-contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.links-contato a {
+    border: 1px solid #ffdf00;
+    padding: 12px 25px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.links-contato a:hover {
+    background-color: #ffdf00;
+    color: #111111;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+    padding: 30px 8%;
+    text-align: center;
+    border-top: 1px solid #333333;
+    color: #aaaaaa;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 850px) {
+
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-imagem {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .secao h2 {
+        font-size: 30px;
+    }
+
+    .hero-imagem img {
+        width: 250px;
+        height: 330px;
+    }
+
+    .forma-amarela {
+        width: 280px;
+        height: 320px;
+    }
+}
+
+
+/* Navegação entre abas */
+
+.menu a {
+    transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #ffdf00;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Animação suave ao trocar de seção */
+
+main section:not([hidden]) {
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
